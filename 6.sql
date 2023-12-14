@@ -22,6 +22,11 @@ create index ix_transactions_ttypes
 --3
 drop index "TransactionDetails".ix_transactiontypes;
 
+create unique index ix_transactiontypes
+	on "TransactionDetails".transactiontypes
+	using btree
+	(transactiontypesid ASC);
+
 
 --4
 create unique index ix_shareprices
